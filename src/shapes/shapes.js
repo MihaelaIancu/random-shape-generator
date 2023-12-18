@@ -102,6 +102,7 @@ export const calculateArea = (shapeType, shape) => {
 
     case "star":
       return 0.25 * Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * Math.pow(20, 2);
+      
     default:
       return 0;
   }
