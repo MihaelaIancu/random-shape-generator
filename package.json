@@ -1,5 +1,5 @@
 {
-  "name": "reevo-test",
+  "name": "shape-generator",
   "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
