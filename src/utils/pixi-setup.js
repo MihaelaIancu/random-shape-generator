@@ -9,8 +9,8 @@ let height = 360;
 
 export const initializePIXI = () => {
   if (isMobile) {
-    width = window.innerWidth / 2;
-    height = 250;
+    width = 350;
+    height = 300;
   }
 
   if (!isPortrait) {
