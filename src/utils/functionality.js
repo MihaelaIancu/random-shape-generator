@@ -52,3 +52,5 @@ export const updateGravityValue = (engine, htmlElement) => {
 
   htmlElement.innerHTML = engine.gravity.y;
 };
+
+

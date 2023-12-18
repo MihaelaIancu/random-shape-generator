@@ -34,6 +34,7 @@ export const shapesGenerator = (app, engine, container, gravityValue) => {
   renderedShapesCount++;
 
   updateShapeNo(renderedShapesCount);
+
   return shape;
 };
 

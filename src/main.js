@@ -3,7 +3,7 @@ import Matter from "matter-js";
 import { initializePIXI } from "./utils/pixi-setup.js";
 import { initializeMatter } from "./utils/physics.js";
 import { shapesGenerator } from "./utils/app.js";
-import { isMobile, isPortrait, updateGravityValue } from "./utils/functionality.js";
+import { isMobile, isPortrait, updateGravityValue, updateShapeNo } from "./utils/functionality.js";
 import "./index.css";
 
 isMobile();
@@ -14,10 +14,28 @@ const engine = initializeMatter();
 
 let stage = document.querySelector("#stage");
 let gravityValueLabel = document.querySelectorAll(".label")[1];
+let infoArea = document.querySelectorAll("span")[1];
+let refreshBtn = document.querySelector("#refresh");
 
 stage.appendChild(app.view);
 
 updateGravityValue(engine, gravityValueLabel);
+
+setInterval(() => {
+  let initialX = Math.random() * stage.offsetWidth;
+  let gravityValue = engine.gravity.y;
+  let initialY =
+    gravityValue < 0
+      ? stage.getBoundingClientRect().bottom
+      : -stage.getBoundingClientRect().top;
+
+  const shape = shapesGenerator(app, engine, shapesContainer, gravityValue);
+
+  Matter.Body.setPosition(shape.body, { x: initialX, y: initialY });
+  Matter.World.add(engine.world, [shape.body]);
+  
+  shapesContainer.addChild(shape.sprite);
+}, 1000);
 
 stage.addEventListener("click", (event) => {
   let mouseX = event.clientX - stage.getBoundingClientRect().left;
@@ -29,6 +47,19 @@ stage.addEventListener("click", (event) => {
   Matter.Body.setPosition(shape.body, { x: mouseX, y: mouseY });
   Matter.World.add(engine.world, [shape.body]);
   shapesContainer.addChild(shape.sprite);
+});
+
+refreshBtn.addEventListener("click", () => {
+  shapesContainer.removeChildren();
+  shapesContainer.destroy({ children: true, texture: true, baseTexture: true });
+
+  let newShapesContainer = new PIXI.Container();
+  newShapesContainer.mask = maskContainer;
+  app.stage.addChild(newShapesContainer);
+
+  shapesContainer = newShapesContainer;
+  updateShapeNo(newShapesContainer.children.length);
+  infoArea.innerHTML = 0;
 });
 
 // Mask container
