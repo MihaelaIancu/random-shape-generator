@@ -42,4 +42,7 @@ module.exports = {
       PIXI: "pixi.js",
     }),
   ],
+  devServer: {
+    allowedHosts: "all",
+  },
 };
