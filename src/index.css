@@ -1,0 +1,110 @@
+:root {
+  --bg: #eef0e5;
+  --border-color: #163020;
+  --text-color-light: #b6c4b6;
+  --text-color-dark: #163020;
+  --button-bg: #304d30;
+  --button-hover-bg: #163020;
+  --button-active-bg: #527853;
+}
+
+.infoContainer {
+  width: 640px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.mobile .infoContainer {
+  width: 320px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.infoContainer > div:nth-child(1) {
+  margin-right: 15px;
+}
+
+.mobile .infoContainer > div:nth-child(1) {
+  margin-right: 7px;
+}
+
+.infoContainer > div {
+  width: 195px;
+  height: 50px;
+  margin-bottom: 5px;
+  border: 2px solid var(--border-color);
+  background: var(--bg);
+  font-size: 20px;
+  color: var(--text-color-dark);
+  text-align: center;
+}
+
+.mobile .infoContainer > div {
+  width: 110px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.buttonsContainer {
+  width: 640px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mobile .buttonsContainer {
+  width: 320px;
+}
+
+.buttonsWrapper > button {
+  width: 100px;
+  height: 40px;
+  margin: 50px -5px 0px 0px;
+  border: 2px solid var(--border-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mobile .buttonsWrapper > button {
+  width: 50px;
+  height: 25px;
+  margin: 20px -5px 0px 0px;
+  font-size: 12px;
+}
+
+.buttonsSection {
+  margin-right: 55px;
+}
+
+.mobile .buttonsSection {
+  margin-right: 25px;
+}
+
+.label {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-dark);
+  text-align: center;
+}
+
+.mobile .label {
+  width: 75px;
+  font-size: 10px;
+}
+
+button {
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--text-color-light);
+}
+
+button:hover {
+  background: var(--button-hover-bg);
+}
+
+button:active {
+  background: var(--button-active-bg);
+}
