@@ -1,8 +1,8 @@
 import * as PIXI from "pixi.js";
 import "@pixi/graphics-extras";
+import { infoArea } from "../utils/functionality.js";
 
 let totalArea = 0;
-let infoArea = document.querySelectorAll("span")[1];
 
 export const getRandomColor = () => {
   return Math.random() * 0xffffff;
