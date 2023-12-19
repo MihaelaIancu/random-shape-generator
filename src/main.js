@@ -3,7 +3,7 @@ import Matter from "matter-js";
 import { initializePIXI } from "./utils/pixi-setup.js";
 import { initializeMatter } from "./utils/physics.js";
 import { shapesGenerator } from "./utils/app.js";
-import { isMobile, isPortrait, updateGravityValue, updateShapeNo } from "./utils/functionality.js";
+import { isMobile, isPortrait, updateGravityValue, updateShapeNo, stage, gravityValueLabel, infoArea, refreshBtn } from "./utils/functionality.js";
 import "./index.css";
 
 isMobile();
@@ -11,11 +11,6 @@ isPortrait();
 
 const app = initializePIXI();
 const engine = initializeMatter();
-
-const stage = document.querySelector("#stage");
-const gravityValueLabel = document.querySelectorAll(".label")[1];
-const infoArea = document.querySelectorAll("span")[1];
-const refreshBtn = document.querySelector("#refresh");
 
 stage.appendChild(app.view);
 
