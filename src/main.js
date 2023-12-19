@@ -3,7 +3,16 @@ import Matter from "matter-js";
 import { initializePIXI } from "./utils/pixi-setup.js";
 import { initializeMatter } from "./utils/physics.js";
 import { shapesGenerator } from "./utils/app.js";
-import { isMobile, isPortrait, updateGravityValue, updateShapeNo, stage, gravityValueLabel, infoArea, refreshBtn } from "./utils/functionality.js";
+import {
+  isMobile,
+  isPortrait,
+  updateGravityValue,
+  updateShapeNo,
+  stage,
+  gravityValueLabel,
+  infoArea,
+  refreshBtn,
+} from "./utils/functionality.js";
 import "./index.css";
 
 isMobile();
@@ -28,7 +37,7 @@ setInterval(() => {
 
   Matter.Body.setPosition(shape.body, { x: initialX, y: initialY });
   Matter.World.add(engine.world, [shape.body]);
-  
+
   shapesContainer.addChild(shape.sprite);
 }, 1000);
 
@@ -65,6 +74,6 @@ maskContainer.endFill();
 app.stage.addChild(maskContainer);
 
 // Shapes container
-const shapesContainer = new PIXI.Container();
+let shapesContainer = new PIXI.Container();
 shapesContainer.mask = maskContainer;
 app.stage.addChild(shapesContainer);
