@@ -9,8 +9,8 @@ export const shapesGenerator = (app, engine, container, gravityValue) => {
 
   const shapeType = getRandomShape();
   const shapeColor = getRandomColor();
-  const shape = drawShape(shapeType, shapeColor, app);
-  
+  let shape = drawShape(shapeType, shapeColor, app);
+
   const body = Matter.Bodies.rectangle(
     shape.sprite.x,
     shape.sprite.y,
