@@ -1,6 +1,10 @@
-let infoShapes = document.querySelectorAll("span")[0];
-let incrementGravityBtn = document.querySelector("#incrementGravity");
-let decrementGravityBtn = document.querySelector("#decrementGravity");
+export const stage = document.querySelector("#stage");
+export const infoShapes = document.querySelectorAll("span")[0];
+export const infoArea = document.querySelectorAll("span")[1];
+export const gravityValueLabel = document.querySelectorAll(".label")[1];
+export const incrementGravityBtn = document.querySelector("#incrementGravity");
+export const decrementGravityBtn = document.querySelector("#decrementGravity");
+export const refreshBtn = document.querySelector("#refresh");
 
 export const isMobileAgent = () => {
   const { userAgent } = window.navigator;
