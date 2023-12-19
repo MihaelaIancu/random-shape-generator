@@ -13,7 +13,7 @@ export const initializePIXI = () => {
     height = 300;
   }
 
-  if (!isPortrait) {
+  if ( isMobile && !isPortrait) {
     width = 500;
     height = window.innerHeight / 2;
   }
