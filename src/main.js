@@ -12,10 +12,10 @@ isPortrait();
 const app = initializePIXI();
 const engine = initializeMatter();
 
-let stage = document.querySelector("#stage");
-let gravityValueLabel = document.querySelectorAll(".label")[1];
-let infoArea = document.querySelectorAll("span")[1];
-let refreshBtn = document.querySelector("#refresh");
+const stage = document.querySelector("#stage");
+const gravityValueLabel = document.querySelectorAll(".label")[1];
+const infoArea = document.querySelectorAll("span")[1];
+const refreshBtn = document.querySelector("#refresh");
 
 stage.appendChild(app.view);
 
@@ -53,7 +53,7 @@ refreshBtn.addEventListener("click", () => {
   shapesContainer.removeChildren();
   shapesContainer.destroy({ children: true, texture: true, baseTexture: true });
 
-  let newShapesContainer = new PIXI.Container();
+  const newShapesContainer = new PIXI.Container();
   newShapesContainer.mask = maskContainer;
   app.stage.addChild(newShapesContainer);
 
@@ -63,13 +63,13 @@ refreshBtn.addEventListener("click", () => {
 });
 
 // Mask container
-let maskContainer = new PIXI.Graphics();
+const maskContainer = new PIXI.Graphics();
 maskContainer.beginFill(0xeef0e5);
 maskContainer.drawRect(0, 0, 640, 360);
 maskContainer.endFill();
 app.stage.addChild(maskContainer);
 
 // Shapes container
-let shapesContainer = new PIXI.Container();
+const shapesContainer = new PIXI.Container();
 shapesContainer.mask = maskContainer;
 app.stage.addChild(shapesContainer);
