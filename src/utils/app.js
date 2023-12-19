@@ -7,9 +7,9 @@ let renderedShapesCount = 0;
 export const shapesGenerator = (app, engine, container, gravityValue) => {
   engine.timing.timeScale = 0.01;
 
-  let shapeType = getRandomShape();
-  let shapeColor = getRandomColor();
-  let shape = drawShape(shapeType, shapeColor, app);
+  const shapeType = getRandomShape();
+  const shapeColor = getRandomColor();
+  const shape = drawShape(shapeType, shapeColor, app);
   
   const body = Matter.Bodies.rectangle(
     shape.sprite.x,
@@ -38,7 +38,7 @@ export const shapesGenerator = (app, engine, container, gravityValue) => {
   return shape;
 };
 
-let shapeTween = (app, engine, shape, container, gravityValue) => {
+const shapeTween = (app, engine, shape, container, gravityValue) => {
   const body = shape.body;
 
   app.ticker.add(() => {
